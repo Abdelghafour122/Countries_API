@@ -1,13 +1,14 @@
 import "./App.css";
-import { Container } from "./components/styles/Container.styled";
 import Header from "./components/Header";
+import Search from "./components/Search";
 
 function App() {
   return (
     <div className="App">
-      <Container>
+      <div className="container">
         <Header />
-      </Container>
+        <Search />
+      </div>
     </div>
   );
 }
