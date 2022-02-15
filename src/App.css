@@ -7,10 +7,26 @@
   --very-dark-blue-lmt: hsl(200, 15%, 8%);
   --dark-gray-lmi: hsl(0, 0%, 52%);
   --very-light-gray-lmbc: hsl(0, 0%, 98%);
+  --white-ele-bcc: hsl(0, 0%, 100%);
   --white-dmt-lme: hsl(0, 0%, 100%);
 
   --homepi-fs: 14px;
   --detp-fs: 16px;
+
+  --default-bor-r: 5px;
+}
+
+.light {
+  --back-c-l: var(--very-light-gray-lmbc);
+  --element-backc: var(--white-ele-bcc);
+  --text-c-l: var(--very-dark-blue-lmt);
+  --second-tc-l: var(--dark-gray-lmi);
+}
+
+.dark {
+  --back-c-d: var(--very-dark-blue-dmbc);
+  --text-c-d: var(--white-dmt-lme);
+  --second-tc-d: var(--dark-blue-dme);
 }
 
 * {
@@ -19,36 +35,68 @@
 
 body {
   margin: 0;
+  padding: 0;
   font-family: "Nunito Sans";
+  background-color: var(--back-c-l);
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
 }
 
 @media (max-width: 1440px) {
   .container {
     max-width: 1370px;
     margin: 0 auto;
+    padding: 0 82px;
   }
 }
-@media (max-width: 375px) {
+
+@media (max-width: 1200px) {
   .container {
-    max-width: 300px;
+    max-width: 1170px;
     margin: 0 auto;
+    padding: 0 82px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    max-width: 750px;
+    margin: 0 auto;
+    padding: 0 33px;
   }
 }
 
 header {
+  padding: 30px 0;
+  box-shadow: 0px 2px 7px 0px #efefef;
+  background-color: var(--element-backc);
+}
+
+.header-cont {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px 0;
 }
 
 header h1 {
   margin: 0;
+  font-size: 27px;
+  color: var(--text-c-l);
 }
 
 header .themer {
   display: flex;
   align-items: center;
+  cursor: pointer;
+  color: var(--text-c-l);
 }
 header .themer span {
   margin-left: 10px;
@@ -56,7 +104,101 @@ header .themer span {
 }
 
 .search {
+  margin: 47px 0;
+}
+
+.search-cont {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+@media (max-width: 768px) {
+  .search-cont {
+    flex-wrap: wrap;
+  }
+}
+
+/* INPUT HOLDER */
+.search .input-holder {
+  background-color: var(--element-backc);
+  width: 482px;
+  position: relative;
+  border-radius: var(--default-bor-r);
+  overflow: hidden;
+  box-shadow: 0px 2px 7px 0px #efefef;
+}
+@media (max-width: 768px) {
+  .input-holder {
+    margin-bottom: 80px;
+  }
+}
+
+.search .input-holder input {
+  width: 100%;
+  padding: 20px 30px 20px 60px;
+  font-family: "Nunito Sans";
+  font-size: 16px;
+  outline: none;
+  border: none;
+}
+
+.search .input-holder input::placeholder {
+  color: var(--second-tc-l);
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.search .input-holder svg {
+  position: absolute;
+  top: 50%;
+  left: calc(30px - (20px / 2));
+  transform: translateY(-50%);
+  height: 20px;
+  color: var(--second-tc-l);
+}
+
+.search .regions {
+  position: relative;
+  padding: 23px 25px;
+  cursor: pointer;
+  color: var(--text-c-l);
+  background-color: var(--element-backc);
+  border-radius: var(--default-bor-r);
+  box-shadow: 0px 2px 7px 0px #efefef;
+}
+
+.search .regions ul {
+  position: absolute;
+  top: calc(100% + 5px);
+  left: 0;
+  width: 100%;
+  padding: 7px;
+  padding: 23px 25px;
+  color: var(--text-c-l);
+  background-color: var(--white-ele-bcc);
+  border-radius: var(--default-bor-r);
+  display: none;
+  box-shadow: 0px 2px 7px 0px #efefef;
+}
+
+.search .regions:focus-within ul {
+  display: block;
+}
+
+.search .regions ul li {
+  cursor: pointer;
+}
+
+.search .regions ul li:not(:last-child) {
+  margin-bottom: 18px;
+}
+
+.search .regions > span {
+  font-size: 18px;
+}
+
+.search .regions > span + span {
+  margin-left: 50px;
 }
