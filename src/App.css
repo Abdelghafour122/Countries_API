@@ -50,6 +50,11 @@ a {
   text-decoration: none;
 }
 
+img {
+  height: 100px;
+  width: 150px;
+}
+
 @media (max-width: 1440px) {
   .container {
     max-width: 1370px;
@@ -74,6 +79,7 @@ a {
   }
 }
 
+/* HEADER */
 header {
   padding: 30px 0;
   box-shadow: 0px 2px 7px 0px #efefef;
@@ -103,6 +109,7 @@ header .themer span {
   font-weight: 600;
 }
 
+/* SEARCH */
 .search {
   margin: 47px 0;
 }
@@ -159,6 +166,7 @@ header .themer span {
   color: var(--second-tc-l);
 }
 
+/* REGIONS */
 .search .regions {
   position: relative;
   padding: 23px 25px;
@@ -201,4 +209,21 @@ header .themer span {
 
 .search .regions > span + span {
   margin-left: 50px;
+}
+
+.country-holder {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 40px;
+}
+
+.country-holder .country {
+  background-color: var(--white-ele-bcc);
+}
+
+.country-holder .country img {
+  width: 100%;
+}
+
+.country-holder .country .text {
 }
