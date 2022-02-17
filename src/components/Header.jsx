@@ -3,12 +3,16 @@ import "../all.min.js";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Header = () => {
+  const change = () => {
+    document.body.classList.contains("light") &&
+      document.body.classList.toggle("dark");
+  };
+
   return (
     <header>
       <div className="container header-cont">
         <h1>Where in the world?</h1>
-        <div className="themer">
-          {/* CHANGE THE ICON BASED ON THE THEME, LIGHT: FA-REGULAR / DARK: FA-SOLID */}
+        <div className="themer" onClick={change}>
           <FontAwesomeIcon
             icon="fa-regular fa-moon"
             style={{ height: "20px" }}

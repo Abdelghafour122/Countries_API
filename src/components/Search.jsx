@@ -4,7 +4,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Search = ({ countries, onFind, onFilter }) => {
   const [countryName, setCountryName] = useState("");
-
   const onSubmit = (e) => {
     e.preventDefault();
 
@@ -20,7 +19,6 @@ const Search = ({ countries, onFind, onFilter }) => {
   return (
     <div className="search">
       <div className="container search-cont">
-        {/* MAKE AN ONSUBMIT HERE, CALL A FUNCTION */}
         <form className="input-holder" onSubmit={onSubmit}>
           <FontAwesomeIcon icon="fa-solid fa-magnifying-glass" />
           <input
@@ -36,7 +34,11 @@ const Search = ({ countries, onFind, onFilter }) => {
           <span>
             <FontAwesomeIcon icon="fa-solid fa-chevron-down" />
           </span>
-          <ul>
+          <ul
+            onClick={(e) => {
+              onFilter(e.target.innerHTML);
+            }}
+          >
             <li>Africa</li>
             <li>America</li>
             <li>Asia</li>

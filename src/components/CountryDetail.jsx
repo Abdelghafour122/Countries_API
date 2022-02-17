@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import "../all.min.js";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const CountryDetail = () => {
   const [country, setCountry] = useState([]);
@@ -17,12 +19,13 @@ const CountryDetail = () => {
   }, [name]);
 
   return (
-    <div className="country-details">
+    <div className="country-details container">
       <button
         onClick={() => {
           navigate("/");
         }}
       >
+        <FontAwesomeIcon icon="fa-solid fa-arrow-left-long" />
         Back
       </button>
       <>
@@ -50,55 +53,66 @@ const CountryDetail = () => {
           return (
             <div className="core" key={ccn3}>
               <img src={flags.svg} alt={name.common} />
-              <h1> {name.common} </h1>
-              <div className="native-names">
-                {" "}
-                Native Name(s):{" "}
-                {namesAvailable.map((n) => {
-                  return <div> {n.common} </div>;
-                })}{" "}
-              </div>
-              <div>
-                Population: <span>{population}</span>
-              </div>
-              <div>
-                Region: <span>{region}</span>
-              </div>
-              <div>
-                Sub Region: <span>{subregion}</span>
-              </div>
-              <div>
-                Capital: <span>{capital}</span>
-              </div>
-              <div>
-                Top Level Domain:{" "}
-                <span>
-                  {tld.map((t) => {
-                    return <span> {t} </span>;
-                  })}
-                </span>{" "}
-              </div>
-              <div>
-                Currencies:{" "}
-                <span>
-                  {currenciesAvailable.map((c) => {
-                    return <span>{c.name}</span>;
-                  })}
-                </span>
-              </div>
-              <div>
-                Languages:{" "}
-                <span>
-                  {languagesAvailable.map((lan) => {
-                    return `${lan} `;
-                  })}
-                </span>
-              </div>
-              <div>
-                Border Countries:{" "}
-                {borders.map((bor) => (
-                  <span> {bor} </span>
-                ))}
+              <div className="text">
+                <h1> {name.common} </h1>
+
+                <div className="sub-cont">
+                  <div className="right-side">
+                    <div className="native-names">
+                      {" "}
+                      Native Name(s):{" "}
+                      {namesAvailable.map((n) => {
+                        return <div> {n.common} </div>;
+                      })}{" "}
+                    </div>
+                    <div>
+                      Population: <span>{population}</span>
+                    </div>
+                    <div>
+                      Region: <span>{region}</span>
+                    </div>
+                    <div>
+                      Sub Region: <span>{subregion}</span>
+                    </div>
+                    <div>
+                      Capital: <span>{capital}</span>
+                    </div>
+                  </div>
+
+                  <div className="left-side">
+                    <div>
+                      Top Level Domain:{" "}
+                      <span>
+                        {tld.map((t) => {
+                          return <span> {t} </span>;
+                        })}
+                      </span>{" "}
+                    </div>
+                    <div>
+                      Currencies:{" "}
+                      <span>
+                        {currenciesAvailable.map((c) => {
+                          return <span>{c.name}, </span>;
+                        })}
+                      </span>
+                    </div>
+                    <div>
+                      Languages:{" "}
+                      <span>
+                        {languagesAvailable.map((lan) => {
+                          return `${lan}, `;
+                        })}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                <div>
+                  Border Countries:{" "}
+                  {borders
+                    ? borders.map((bor) => <span> {bor} </span>)
+                    : "This Country has no neighboring countries!"}
+                </div>
               </div>
             </div>
           );
