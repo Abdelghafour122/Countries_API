@@ -7,13 +7,15 @@ mateb9ach t9awed
 a5dem wa7da bel css bach tet3alem theming b css
 w wa7da bel styled-components bach tet3alem theming b react
 
-
+IMPORTANT:
 n9adrou n5admou b CCA3 ta3 el API bach ki tkliki 3la l border yeddik lel blad
 tendar kima name {direlha hover effect "Go to country"}
 
-chof kifah tdir button "back" mor ma dir search wella filter
-zid transitions yda 7abit lel theming
 
+ENHANCEMENTS:
+    Empty the input box after each submit
+    Add an "All" option to the regions list
+    Chof kifah tdir button "back" mor ma dir search wella filter
+    Zid transitions yda 7abit lel theming
 
-BUGS TO FIX:
-empty the input box after each submit
+ADD THE RESPONSIVE

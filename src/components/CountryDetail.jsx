@@ -46,10 +46,6 @@ const CountryDetail = () => {
           let namesAvailable = Array.from(Object.values(name.nativeName));
           let currenciesAvailable = Array.from(Object.values(currencies));
           let languagesAvailable = Array.from(Object.values(languages));
-          //   console.log(languagesAvailable);
-          //   console.log(currenciesAvailable);
-          //   console.log(namesAvailable);
-          //   console.log(namesAvailable[0].common);
           return (
             <div className="core" key={ccn3}>
               <img src={flags.svg} alt={name.common} />

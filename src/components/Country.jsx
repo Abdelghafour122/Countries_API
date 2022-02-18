@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Country = ({ countryId, flag, name, population, region, capital }) => {
   return (
     <div className="country" key={countryId}>
-      <img src={flag.svg} alt="didn't work" />
+      <img src={flag.svg} alt={name} />
       <div className="text">
         <h3>{name}</h3>
         <p>

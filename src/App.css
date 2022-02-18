@@ -102,6 +102,11 @@ header h1 {
   font-size: 27px;
   color: var(--text-c);
 }
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 22px;
+  }
+}
 
 header .themer {
   display: flex;
@@ -128,6 +133,8 @@ header .themer span {
 @media (max-width: 768px) {
   .search-cont {
     flex-wrap: wrap;
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
 
@@ -140,9 +147,17 @@ header .themer span {
   overflow: hidden;
   box-shadow: 0px 2px 7px 0px var(--shadow-color);
 }
+@media (max-width: 1200px) {
+  .search .input-holder {
+    max-width: 100%;
+    width: 350px;
+  }
+}
+
 @media (max-width: 768px) {
   .input-holder {
     margin-bottom: 80px;
+    width: 100%;
   }
 }
 
@@ -183,6 +198,12 @@ header .themer span {
   border-radius: var(--default-bor-r);
   box-shadow: 0px 2px 7px 0px var(--shadow-color);
 }
+@media (max-width: 1200px) {
+  .search .regions {
+    display: flex;
+    align-items: center;
+  }
+}
 
 .search .regions ul {
   position: absolute;
@@ -217,11 +238,23 @@ header .themer span {
 .search .regions > span + span {
   margin-left: 50px;
 }
+@media (max-width: 768px) {
+  .search .regions > span + span {
+    margin-left: 75px;
+  }
+}
 
 .country-holder {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
   gap: 40px;
+}
+
+@media (max-width: 768px) {
+  .country-holder {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    padding: 0 57px;
+  }
 }
 
 .country-holder .country {
@@ -236,10 +269,21 @@ header .themer span {
   height: 160px;
   color: var(--text-c-l);
 }
+@media (max-width: 768px) {
+  .country-holder .country img {
+    height: 220px;
+  }
+}
 
 .country-holder .country .text {
   padding: 28px;
   color: var(--text-c);
+}
+@media (max-width: 768px) {
+  .country-holder .country .text {
+    padding: 28px;
+    padding-bottom: 60px;
+  }
 }
 
 .country-holder .country .text h3 {
@@ -295,10 +339,22 @@ header .themer span {
   width: 100%;
   margin-bottom: 80px;
 }
+@media (max-width: 768px) {
+  .country-details .core {
+    flex-wrap: wrap;
+    gap: 60px;
+  }
+}
 
 .country-details .core img {
   width: 460px;
   height: 290px;
+}
+@media (max-width: 768px) {
+  .country-details .core img {
+    width: 100%;
+    height: unset;
+  }
 }
 
 .country-details .core .text {
@@ -313,10 +369,21 @@ header .themer span {
   justify-content: space-between;
 }
 
+@media (max-width: 768px) {
+  .country-details .core .text .sub-cont {
+    flex-direction: column;
+  }
+}
+
 .country-details .core .text .sub-cont .right-side div,
 .country-details .core .text .sub-cont .left-side div {
   font-weight: 600;
   margin-bottom: 20px;
+}
+@media (max-width: 768px) {
+  .country-details .core .text .sub-cont .left-side {
+    margin-top: 40px;
+  }
 }
 .country-details .core .text span {
   font-weight: normal;
