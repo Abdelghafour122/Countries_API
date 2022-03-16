@@ -276,8 +276,7 @@ header .themer span {
 .country-holder .country img {
   width: 100%;
   height: 160px;
-  color: var(--text-c-l);
-  transition: 0.2s;
+  object-fit: cover;
 }
 @media (max-width: 768px) {
   .country-holder .country img {

@@ -5,7 +5,7 @@ import {
   faChevronDown,
 } from "@fortawesome/free-solid-svg-icons";
 
-const Search = ({ onFind, onFilter }) => {
+const Search = ({ onFind, onFilter, onInit }) => {
   const [countryName, setCountryName] = useState("");
   const onSubmit = (e) => {
     e.preventDefault();
@@ -17,6 +17,9 @@ const Search = ({ onFind, onFilter }) => {
 
     onFind(countryName.toLowerCase());
     setCountryName("");
+  };
+  const findRegion = (e) => {
+    onFilter(e.target.innerHTML);
   };
 
   return (
@@ -40,16 +43,19 @@ const Search = ({ onFind, onFilter }) => {
           <span>
             <FontAwesomeIcon icon={faChevronDown} />
           </span>
-          <ul
-            onClick={(e) => {
-              onFilter(e.target.innerHTML);
-            }}
-          >
-            <li>Africa</li>
-            <li>America</li>
-            <li>Asia</li>
-            <li>Europe</li>
-            <li>Oceania</li>
+          <ul>
+            <li onClick={(e) => findRegion(e)}>Africa</li>
+            <li onClick={(e) => findRegion(e)}>America</li>
+            <li onClick={(e) => findRegion(e)}>Asia</li>
+            <li onClick={(e) => findRegion(e)}>Europe</li>
+            <li onClick={(e) => findRegion(e)}>Oceania</li>
+            <li
+              onClick={() => {
+                onInit();
+              }}
+            >
+              All Regions
+            </li>
           </ul>
         </a>
       </div>

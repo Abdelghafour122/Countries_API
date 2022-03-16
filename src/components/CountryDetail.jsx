@@ -11,8 +11,9 @@ const CountryDetail = () => {
 
   useEffect(() => {
     const getSpecificData = async () => {
+      const tarName = name.split(" ").join("%20");
       const response = await fetch(
-        `https://restcountries.com/v3.1/name/${name}`
+        `https://restcountries.com/v3.1/name/${tarName}`
       ).then((data) => data.json());
       setCountry(response);
     };

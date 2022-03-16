@@ -45,7 +45,11 @@ function App() {
           path="/countries_api"
           element={
             <>
-              <Search onFilter={filterCountry} onFind={findCountry} />{" "}
+              <Search
+                onFilter={filterCountry}
+                onFind={findCountry}
+                onInit={getCountries}
+              />{" "}
               <Countries countries={countries} />
               <Attribution />
             </>
