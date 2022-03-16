@@ -7,8 +7,6 @@ import { Route, Routes, useNavigate } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import ErrorPage from "./components/ErrorPage";
 
-// FIX THE ROUTER HOMEPAGE
-
 function App() {
   const [countries, setCountries] = useState([]);
   let navigate = useNavigate();
@@ -46,11 +44,7 @@ function App() {
           path="/countries_api"
           element={
             <>
-              <Search
-                // countries={countries}
-                onFilter={filterCountry}
-                onFind={findCountry}
-              />{" "}
+              <Search onFilter={filterCountry} onFind={findCountry} />{" "}
               <Countries countries={countries} />
             </>
           }
