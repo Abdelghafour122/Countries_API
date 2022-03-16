@@ -5,7 +5,7 @@ import {
   faChevronDown,
 } from "@fortawesome/free-solid-svg-icons";
 
-const Search = ({ countries, onFind, onFilter }) => {
+const Search = ({ onFind, onFilter }) => {
   const [countryName, setCountryName] = useState("");
   const onSubmit = (e) => {
     e.preventDefault();

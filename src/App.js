@@ -47,7 +47,7 @@ function App() {
           element={
             <>
               <Search
-                countries={countries}
+                // countries={countries}
                 onFilter={filterCountry}
                 onFind={findCountry}
               />{" "}

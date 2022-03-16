@@ -1,11 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMoon } from "@fortawesome/free-solid-svg-icons";
+import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
 
 const Header = () => {
+  const [dark, setDark] = useState(false);
   const change = () => {
-    document.body.classList.contains("light") &&
+    if (document.body.classList.contains("light")) {
       document.body.classList.toggle("dark");
+      setDark(!dark);
+    }
   };
 
   return (
@@ -13,8 +16,17 @@ const Header = () => {
       <div className="container header-cont">
         <h1>Where in the world?</h1>
         <div className="themer" onClick={change}>
-          <FontAwesomeIcon icon={faMoon} style={{ height: "20px" }} />
-          <span>Dark Mode</span>
+          {!dark ? (
+            <>
+              <FontAwesomeIcon icon={faMoon} style={{ height: "20px" }} />
+              <span>Dark Mode</span>
+            </>
+          ) : (
+            <>
+              <FontAwesomeIcon icon={faSun} style={{ height: "20px" }} />
+              <span>Light Mode</span>
+            </>
+          )}
         </div>
       </div>
     </header>
