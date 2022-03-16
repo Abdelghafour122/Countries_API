@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeftLong } from "@fortawesome/free-solid-svg-icons";
+import Attribution from "./Attribution";
 
 const CountryDetail = () => {
   const [country, setCountry] = useState([]);
@@ -113,6 +114,7 @@ const CountryDetail = () => {
             </div>
           );
         })}
+        <Attribution />
       </>
     </div>
   );

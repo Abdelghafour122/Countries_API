@@ -6,6 +6,7 @@ import CountryDetail from "./components/CountryDetail";
 import { Route, Routes, useNavigate } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import ErrorPage from "./components/ErrorPage";
+import Attribution from "./components/Attribution";
 
 function App() {
   const [countries, setCountries] = useState([]);
@@ -46,6 +47,7 @@ function App() {
             <>
               <Search onFilter={filterCountry} onFind={findCountry} />{" "}
               <Countries countries={countries} />
+              <Attribution />
             </>
           }
         ></Route>

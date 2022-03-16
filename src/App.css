@@ -253,6 +253,7 @@ header .themer span {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
   gap: 40px;
+  margin-bottom: 20px;
 }
 
 @media (max-width: 768px) {
@@ -446,4 +447,22 @@ header .themer span {
   cursor: pointer;
   color: var(--text-c);
   transition: 0.2s;
+}
+
+footer {
+  font-size: 18px;
+  color: darkcyan;
+  font-weight: 600;
+  position: relative;
+  bottom: 0;
+  padding: 10px 0;
+  text-align: center;
+  align-self: center;
+}
+
+footer a {
+  font-size: 20px;
+  color: royalblue;
+
+  text-decoration: underline;
 }

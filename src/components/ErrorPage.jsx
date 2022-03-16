@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import Attribution from "./Attribution";
 const ErrorPage = () => {
   let navigate = useNavigate();
   return (
@@ -12,6 +13,7 @@ const ErrorPage = () => {
       >
         Back to home
       </button>
+      <Attribution />
     </div>
   );
 };
