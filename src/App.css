@@ -236,8 +236,10 @@ header .themer span {
   margin-bottom: 18px;
 }
 
-.search .regions > span {
+.search .regions > span p {
   font-size: 18px;
+  margin: 0;
+  display: inline;
 }
 
 .search .regions > span + span {
@@ -295,8 +297,9 @@ header .themer span {
   }
 }
 
-.country-holder .country .text h3 {
+.country-holder .country .text h1 {
   margin-top: 0;
+  font-size: 1.17rem;
 }
 
 .country-holder .country .text p {

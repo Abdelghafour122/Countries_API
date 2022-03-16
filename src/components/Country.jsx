@@ -6,7 +6,7 @@ const Country = ({ countryId, flag, name, population, region, capital }) => {
     <div className="country" key={countryId}>
       <img src={flag.svg} alt={name} />
       <div className="text">
-        <h3>{name}</h3>
+        <h1>{name}</h1>
         <p>
           Population: <span>{population}</span>
         </p>

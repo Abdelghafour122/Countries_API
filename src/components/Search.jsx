@@ -27,13 +27,16 @@ const Search = ({ onFind, onFilter }) => {
           <input
             type="text"
             placeholder="Search for a country..."
+            role="search"
             onChange={(e) => {
               setCountryName(e.target.value);
             }}
           />
         </form>
-        <a className="regions" href="#">
-          <span>Filter by Region</span>
+        <a className="regions" href="#" role="list">
+          <span>
+            <p>Filter by Region</p>
+          </span>
           <span>
             <FontAwesomeIcon icon={faChevronDown} />
           </span>
