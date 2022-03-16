@@ -7,7 +7,7 @@ const ErrorPage = () => {
       <h1>Error, Page Not Found!</h1>
       <button
         onClick={() => {
-          navigate("/");
+          navigate("/countries_api");
         }}
       >
         Back to home

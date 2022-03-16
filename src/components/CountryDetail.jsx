@@ -22,7 +22,7 @@ const CountryDetail = () => {
     <div className="country-details container">
       <button
         onClick={() => {
-          navigate("/");
+          navigate("/countries_api");
         }}
       >
         <FontAwesomeIcon icon={faArrowLeftLong} />
