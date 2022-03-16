@@ -43,6 +43,7 @@ body {
   padding: 0;
   font-family: "Nunito Sans";
   background-color: var(--back-c);
+  transition: 0.3s;
 }
 
 ul {
@@ -54,11 +55,6 @@ ul {
 a {
   text-decoration: none;
 }
-
-/* img {
-  height: 100px;
-  width: 150px;
-} */
 
 @media (max-width: 1440px) {
   .container {
@@ -89,6 +85,7 @@ header {
   padding: 30px 0;
   box-shadow: 0px 2px 7px 0px var(--shadow-color);
   background-color: var(--element-backc);
+  transition: 0.3s;
 }
 
 .header-cont {
@@ -101,6 +98,7 @@ header h1 {
   margin: 0;
   font-size: 27px;
   color: var(--text-c);
+  transition: 0.3s;
 }
 @media (max-width: 768px) {
   header h1 {
@@ -113,6 +111,7 @@ header .themer {
   align-items: center;
   cursor: pointer;
   color: var(--text-c);
+  transition: 0.3s;
 }
 header .themer span {
   margin-left: 10px;
@@ -146,6 +145,7 @@ header .themer span {
   border-radius: var(--default-bor-r);
   overflow: hidden;
   box-shadow: 0px 2px 7px 0px var(--shadow-color);
+  transition: 0.3s;
 }
 @media (max-width: 1200px) {
   .search .input-holder {
@@ -170,6 +170,7 @@ header .themer span {
   border: none;
   background-color: var(--element-backc);
   color: var(--text-c);
+  transition: 0.3s;
 }
 
 .search .input-holder input::placeholder {
@@ -177,6 +178,7 @@ header .themer span {
   font-family: inherit;
   font-size: 16px;
   font-weight: 600;
+  transition: 0.3s;
 }
 
 .search .input-holder svg {
@@ -186,6 +188,7 @@ header .themer span {
   transform: translateY(-50%);
   height: 20px;
   color: var(--input-color);
+  transition: 0.3s;
 }
 
 /* REGIONS */
@@ -197,6 +200,7 @@ header .themer span {
   background-color: var(--element-backc);
   border-radius: var(--default-bor-r);
   box-shadow: 0px 2px 7px 0px var(--shadow-color);
+  transition: 0.3s;
 }
 @media (max-width: 1200px) {
   .search .regions {
@@ -217,6 +221,7 @@ header .themer span {
   border-radius: var(--default-bor-r);
   display: none;
   box-shadow: 0px 2px 7px 0px var(--shadow-color);
+  transition: 0.3s;
 }
 
 .search .regions:focus-within ul {
@@ -262,12 +267,14 @@ header .themer span {
   border-radius: var(--default-bor-r);
   overflow: hidden;
   box-shadow: 0px 2px 7px 0px var(--shadow-color);
+  transition: 0.3s;
 }
 
 .country-holder .country img {
   width: 100%;
   height: 160px;
   color: var(--text-c-l);
+  transition: 0.3s;
 }
 @media (max-width: 768px) {
   .country-holder .country img {
@@ -278,6 +285,7 @@ header .themer span {
 .country-holder .country .text {
   padding: 28px;
   color: var(--text-c);
+  transition: 0.3s;
 }
 @media (max-width: 768px) {
   .country-holder .country .text {
@@ -326,10 +334,12 @@ header .themer span {
   font-size: 18px;
   cursor: pointer;
   color: var(--text-c);
+  transition: 0.3s;
 }
 .country-details button svg {
   margin-right: 12px;
   color: var(--text-c);
+  transition: 0.3s;
 }
 
 .country-details .core {
@@ -362,6 +372,7 @@ header .themer span {
   flex-direction: column;
   flex: 1;
   color: var(--text-c);
+  transition: 0.3s;
 }
 
 .country-details .core .text .sub-cont {
@@ -407,6 +418,7 @@ header .themer span {
   box-shadow: 0px 2px 7px 0px var(--shadow-color);
   margin: 10px 0 0 10px;
   display: inline-block;
+  transition: 0.3s;
 }
 
 .error {
@@ -419,6 +431,7 @@ header .themer span {
 .error h1 {
   margin-bottom: 0;
   color: var(--text-c);
+  transition: 0.3s;
 }
 
 .error button {
@@ -432,4 +445,5 @@ header .themer span {
   font-size: 18px;
   cursor: pointer;
   color: var(--text-c);
+  transition: 0.3s;
 }

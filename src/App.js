@@ -3,20 +3,12 @@ import Countries from "./components/Countries";
 import Header from "./components/Header";
 import Search from "./components/Search";
 import CountryDetail from "./components/CountryDetail";
-import {
-  BrowserRouter as Router,
-  Link,
-  Route,
-  Routes,
-  useParams,
-  useNavigate,
-} from "react-router-dom";
+import { Route, Routes, useNavigate } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import ErrorPage from "./components/ErrorPage";
 
 function App() {
   const [countries, setCountries] = useState([]);
-  const { countryName } = useParams();
   let navigate = useNavigate();
 
   const getCountries = async () => {
@@ -44,7 +36,6 @@ function App() {
     getCountries();
   }, []);
   return (
-    // <Router>
     <div className="App">
       <Header />
       <Routes>
@@ -66,7 +57,6 @@ function App() {
         <Route path="*" element={<ErrorPage />}></Route>
       </Routes>
     </div>
-    // </Router>
   );
 }
 

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import "../all.min.js";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowLeftLong } from "@fortawesome/free-solid-svg-icons";
 
 const CountryDetail = () => {
   const [country, setCountry] = useState([]);
@@ -25,7 +25,7 @@ const CountryDetail = () => {
           navigate("/");
         }}
       >
-        <FontAwesomeIcon icon="fa-solid fa-arrow-left-long" />
+        <FontAwesomeIcon icon={faArrowLeftLong} />
         Back
       </button>
       <>

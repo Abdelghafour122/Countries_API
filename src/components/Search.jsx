@@ -1,6 +1,9 @@
 import React, { useState } from "react";
-import "../all.min.js";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faMagnifyingGlass,
+  faChevronDown,
+} from "@fortawesome/free-solid-svg-icons";
 
 const Search = ({ countries, onFind, onFilter }) => {
   const [countryName, setCountryName] = useState("");
@@ -20,7 +23,7 @@ const Search = ({ countries, onFind, onFilter }) => {
     <div className="search">
       <div className="container search-cont">
         <form className="input-holder" onSubmit={onSubmit}>
-          <FontAwesomeIcon icon="fa-solid fa-magnifying-glass" />
+          <FontAwesomeIcon icon={faMagnifyingGlass} />
           <input
             type="text"
             placeholder="Search for a country..."
@@ -32,7 +35,7 @@ const Search = ({ countries, onFind, onFilter }) => {
         <a className="regions" href="#">
           <span>Filter by Region</span>
           <span>
-            <FontAwesomeIcon icon="fa-solid fa-chevron-down" />
+            <FontAwesomeIcon icon={faChevronDown} />
           </span>
           <ul
             onClick={(e) => {
