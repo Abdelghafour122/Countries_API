@@ -434,7 +434,7 @@ header .themer span {
 }
 
 .country-details .core .text .borders span::before {
-  content: attr(data-border);
+  /* content: attr(data-border); */
   position: absolute;
   width: 100%;
   height: 50%;
