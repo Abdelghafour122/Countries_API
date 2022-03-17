@@ -30,16 +30,21 @@ const Search = ({ onFind, onFilter, onInit }) => {
           <input
             type="text"
             placeholder="Search for a country..."
-            role="search"
+            role="form"
             onChange={(e) => {
               setCountryName(e.target.value);
             }}
           />
         </form>
-        <a className="regions" href="#" role="list">
-          <span>
-            <p>Filter by Region</p>
-          </span>
+        <a
+          className="regions"
+          href="#"
+          role="link"
+          aria-label="Choose from the regions below"
+        >
+          <p>Filter by Region</p>
+          {/* <span>
+          </span> */}
           <span>
             <FontAwesomeIcon icon={faChevronDown} />
           </span>

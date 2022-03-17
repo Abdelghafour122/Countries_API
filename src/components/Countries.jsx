@@ -2,7 +2,7 @@ import Country from "./Country";
 
 const Countries = ({ countries }) => {
   return (
-    <main className="country-holder container" role="list">
+    <main className="country-holder container" role="main">
       {countries.map((country) => {
         const { flags, name, population, region, capital, ccn3 } = country;
         return (

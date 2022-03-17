@@ -13,7 +13,6 @@ const CountryDetail = () => {
     const borderCountry = await fetch(
       `https://restcountries.com/v3.1/alpha/${borCcode}`
     ).then((data) => data.json());
-    // toolTipName = borderCountry[0].name.common;
     const borderCountryName = borderCountry[0].name.common
       .split(" ")
       .join("%20");
