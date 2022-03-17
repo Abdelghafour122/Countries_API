@@ -9,6 +9,17 @@ const CountryDetail = () => {
   const { name } = useParams();
   let navigate = useNavigate();
 
+  const getBorderCountry = async (borCcode) => {
+    const borderCountry = await fetch(
+      `https://restcountries.com/v3.1/alpha/${borCcode}`
+    ).then((data) => data.json());
+    // toolTipName = borderCountry[0].name.common;
+    const borderCountryName = borderCountry[0].name.common
+      .split(" ")
+      .join("%20");
+    navigate(`/countries/${borderCountryName}`);
+  };
+
   useEffect(() => {
     const getSpecificData = async () => {
       const tarName = name.split(" ").join("%20");
@@ -17,19 +28,30 @@ const CountryDetail = () => {
       ).then((data) => data.json());
       setCountry(response);
     };
+
     getSpecificData();
   }, [name]);
 
   return (
     <div className="country-details container">
-      <button
-        onClick={() => {
-          navigate("/countries_api");
-        }}
-      >
-        <FontAwesomeIcon icon={faArrowLeftLong} />
-        Back
-      </button>
+      <div className="guiding-buttons">
+        <button
+          onClick={() => {
+            navigate(-1);
+          }}
+        >
+          <FontAwesomeIcon icon={faArrowLeftLong} />
+          Back
+        </button>
+        <button
+          onClick={() => {
+            navigate("/countries_api");
+          }}
+        >
+          <FontAwesomeIcon icon={faArrowLeftLong} />
+          Back To Homepage
+        </button>
+      </div>
       <>
         {country.map((cont) => {
           const {
@@ -105,10 +127,19 @@ const CountryDetail = () => {
                   </div>
                 </div>
 
-                <div>
+                <div className="borders">
                   Border Countries:{" "}
                   {borders
-                    ? borders.map((bor) => <span> {bor} </span>)
+                    ? borders.map((bor) => (
+                        <span
+                          onClick={() => {
+                            getBorderCountry(bor);
+                          }}
+                        >
+                          {" "}
+                          {bor}{" "}
+                        </span>
+                      ))
                     : "This Country has no neighboring countries!"}
                 </div>
               </div>
