@@ -52,14 +52,13 @@ const CountryDetail = () => {
         </button>
       </div>
       <>
-        {country.map((cont) => {
+        {country.map((cont, index) => {
           const {
             flags,
             name,
             population,
             region,
             capital,
-            ccn3,
             languages,
             currencies,
             subregion,
@@ -70,7 +69,7 @@ const CountryDetail = () => {
           let currenciesAvailable = Array.from(Object.values(currencies));
           let languagesAvailable = Array.from(Object.values(languages));
           return (
-            <div className="core" key={ccn3}>
+            <div className="core" key={index}>
               <img src={flags.svg} alt={name.common} />
               <div className="text">
                 <h1> {name.common} </h1>
@@ -80,8 +79,8 @@ const CountryDetail = () => {
                     <div className="native-names">
                       {" "}
                       Native Name(s):{" "}
-                      {namesAvailable.map((n) => {
-                        return <div> {n.common} </div>;
+                      {namesAvailable.map((n, nameIndex) => {
+                        return <div key={nameIndex}> {n.common} </div>;
                       })}{" "}
                     </div>
                     <div>
@@ -102,24 +101,24 @@ const CountryDetail = () => {
                     <div>
                       Top Level Domain:{" "}
                       <span>
-                        {tld.map((t) => {
-                          return <span> {t} </span>;
+                        {tld.map((t, tldIndex) => {
+                          return <span key={tldIndex}> {t} </span>;
                         })}
                       </span>{" "}
                     </div>
                     <div>
                       Currencies:{" "}
                       <span>
-                        {currenciesAvailable.map((c) => {
-                          return <span>{c.name}, </span>;
+                        {currenciesAvailable.map((c, currIndex) => {
+                          return <span key={currIndex}>{c.name},&nbsp; </span>;
                         })}
                       </span>
                     </div>
                     <div>
                       Languages:{" "}
                       <span>
-                        {languagesAvailable.map((lan) => {
-                          return `${lan}, `;
+                        {languagesAvailable.map((lan, lanIndex) => {
+                          return <p key={lanIndex}>{lan},&nbsp; </p>;
                         })}
                       </span>
                     </div>
@@ -129,8 +128,9 @@ const CountryDetail = () => {
                 <div className="borders">
                   Border Countries:{" "}
                   {borders
-                    ? borders.map((bor) => (
+                    ? borders.map((bor, borIndex) => (
                         <span
+                          key={borIndex}
                           onClick={() => {
                             getBorderCountry(bor);
                           }}

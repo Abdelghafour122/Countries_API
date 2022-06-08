@@ -410,6 +410,11 @@ header .themer span {
   font-weight: normal;
 }
 
+.country-details .core .text span p {
+  margin: 0;
+  display: inline-block;
+}
+
 .country-details .core .text .right-side .native-names div {
   margin-left: 15px;
   margin-bottom: 0;

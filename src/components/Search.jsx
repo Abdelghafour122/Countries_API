@@ -22,6 +22,8 @@ const Search = ({ onFind, onFilter, onInit }) => {
     onFilter(e.target.innerHTML);
   };
 
+  const REGIONS = ["Africa", "America", "Asia", "Europe", "Oceania"];
+
   return (
     <div className="search">
       <div className="container search-cont">
@@ -31,6 +33,7 @@ const Search = ({ onFind, onFilter, onInit }) => {
             type="text"
             placeholder="Search for a country..."
             role="form"
+            value={countryName}
             onChange={(e) => {
               setCountryName(e.target.value);
             }}
@@ -43,17 +46,17 @@ const Search = ({ onFind, onFilter, onInit }) => {
           aria-label="Choose from the regions below"
         >
           <p>Filter by Region</p>
-          {/* <span>
-          </span> */}
           <span>
             <FontAwesomeIcon icon={faChevronDown} />
           </span>
           <ul>
-            <li onClick={(e) => findRegion(e)}>Africa</li>
-            <li onClick={(e) => findRegion(e)}>America</li>
-            <li onClick={(e) => findRegion(e)}>Asia</li>
-            <li onClick={(e) => findRegion(e)}>Europe</li>
-            <li onClick={(e) => findRegion(e)}>Oceania</li>
+            {REGIONS.map((ev, index) => {
+              return (
+                <li key={index} onClick={(e) => findRegion(e)}>
+                  {REGIONS[index]}
+                </li>
+              );
+            })}
             <li
               onClick={() => {
                 onInit();
