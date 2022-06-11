@@ -10,6 +10,7 @@ import Attribution from "./components/Attribution";
 
 function App() {
   const [countries, setCountries] = useState([]);
+  const [loading, setLodaing] = useState(true);
   let navigate = useNavigate();
 
   const getCountries = async () => {
@@ -17,6 +18,7 @@ function App() {
       (data) => data.json()
     );
     setCountries(response);
+    setLodaing(false);
   };
 
   const findCountry = async (countryName) => {
@@ -50,7 +52,7 @@ function App() {
                 onFind={findCountry}
                 onInit={getCountries}
               />{" "}
-              <Countries countries={countries} />
+              <Countries countries={countries} onLoad={loading} />
               <Attribution />
             </>
           }
